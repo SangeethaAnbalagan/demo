@@ -1,0 +1,51 @@
+App.js
+
+import { Link } from "react-router-dom";
+  <center>
+     <h1>Hai welcome to all</h1> 
+     <nav><Link to="/page1">page1</Link></nav>
+     <nav><Link to="/page2">page2</Link></nav>
+      </center>
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App';
+import PageOne from './page1';
+import PageTwo from './page2';
+
+const router=createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>
+  },
+  {
+    path:"page1",
+    element:<PageOne/>
+  },
+  {
+    path:"page2",
+    element:<PageTwo/>
+  }
+])
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={router}/>
+  </React.StrictMode>
+);
+
+
+/* #m1 {
+  background-color: blanchedalmond;
+  color: blue;
+  height: 25px;
+  position: relative;
+  top: -18px;
+  font-size: larger;
+} */
